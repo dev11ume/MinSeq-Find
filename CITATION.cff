@@ -1,0 +1,10 @@
+cff-version: 1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Bhimsaria
+    given-names: Devesh
+    orcid: https://orcid.org/0000-0001-8413-3801
+title: "Hidden Modes of DNA Binding by Human Nuclear Receptors"
+version: 1.0
+doi: 10.5281/zenodo.7844417
+date-released: 2023-04-19
