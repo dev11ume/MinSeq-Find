@@ -40,7 +40,7 @@ seq_to_print=100000;% NUMBER OF MINSEQS TO PRINT TO FILE
 path_files='MinSeqFindFunct';
 addpath(path_files);
 
-C=textscan_db1(list_file,'%s%s%*d%s%s%s','\t');
+C=textscan_mod_v1(list_file,'%s%s%*d%s%s%s','\t');
 TFs_file=C{1};Library_files=C{2};TF_sample=C{3};Llibs=C{4};Rlibs=C{5};
 
 dir_nm=[path_files '-op'];
