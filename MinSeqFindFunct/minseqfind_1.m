@@ -142,10 +142,15 @@ clear bgsf ctsfl ctsfr inx all_len_c all_len_nox_c inx_min inx_rev inx_u inxx ix
     Rlibs TFs_file TFs_name TFs_round int_n2u2 seqs_uq count seq_col_tot bg...
     all_len_c all_len_nox_c seq_colp5n_tot;
 
-try
-  save([File1(1:end-4) '-' LibFile(1:end-4) '-res1x.mat'],'-mat7-binary');
-catch
-  save([File1(1:end-4) '-' LibFile(1:end-4) '-res1x.mat'],'-binary');
+isOctave = exist('OCTAVE_VERSION', 'builtin') ~= 0;
+if isOctave 
+    try
+      save([File1(1:end-4) '-' LibFile(1:end-4) '-res1x.mat'],'-mat7-binary');
+    catch
+      save([File1(1:end-4) '-' LibFile(1:end-4) '-res1x.mat'],'-binary');
+    end
+else
+    save([File1(1:end-4) '-' LibFile(1:end-4) '-res1x.mat']);
 end
 movefile([File1(1:end-4) '-' LibFile(1:end-4) '-res1x.mat'],[File1(1:end-4) '-' LibFile(1:end-4) '-res1f.mat'],'f');
 
