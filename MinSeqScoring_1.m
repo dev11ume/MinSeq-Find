@@ -22,6 +22,7 @@ for ix=1:seeds_to_contx
     all_len_c(ix)=find(seqx{ix}~='N',1,'last');
     all_len_nox_c(ix)=length(find(seqx{ix}~='N'));
 end
+int_nu2x_c_arr2=int_nu2x_c_arr;
 if chip_scoring_version==1
 int_chip_seq_arrx=...
     chip_seq_count_v2(max_gap,min_half_nmer,max_half_nmer,seqsx_inx_c_arr{max_cut_i},l,...
