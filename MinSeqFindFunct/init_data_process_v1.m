@@ -19,11 +19,13 @@ for i=1:l_seqs_raw
     % THROWING SEQUENCES CONTAINING Ns
     if isempty(find(seqs{i}=='N', 1)); cont_seqs1(i)=1; end
     % REMOVE SOME KNOWN CONTAMINATION SEQUENCES
-    if sum(seqs{i}=='CGAATGATGGATTGCAACCG')>=18 ||...
+    if (l==20)
+        if sum(seqs{i}=='CGAATGATGGATTGCAACCG')>=18 ||...
             sum(seqs{i}=='TACCGATTACGTAATTTCGA')>=18 ||...
             sum(seqs{i}=='CGCGAATGACGTCAATCGGA')>=18 ||...
             sum(seqs{i}=='GCTAGATTGCGCAATCCAGT')>=18
-        cont_seqs1(i)=0;
+            cont_seqs1(i)=0;
+        end
     end
 end
 if strcmpi(Llib,'x')
